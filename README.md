@@ -30,7 +30,7 @@ A comprehensive, all-in-one developer system toolkit.
 ### For Windows Users
 Open an Administrator PowerShell and run:
 ```powershell
-$RepoUrl = "https://raw.githubusercontent.com/Domcho214/devfix/main/devfix.exe"
+irm https://raw.githubusercontent.com/Domcho214/devfix/main/install.ps1 | iex
 ```
 
 ### Manual Installation (All Platforms)
