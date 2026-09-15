@@ -8,7 +8,7 @@ Write-Host "=========================================" -ForegroundColor Cyan
 # Set up paths
 $InstallDir = "$env:LOCALAPPDATA\devfix\bin"
 $ExePath = "$InstallDir\devfix.exe"
-$RepoUrl = "https://raw.githubusercontent.com/<Tvoj-GitHub-Ime>/devfix/main/builds/devfix-windows-amd64.exe"
+$RepoUrl = $RepoUrl = "https://raw.githubusercontent.com/Domcho214/devfix/main/devfix.exe"
 
 # Create installation directory if it doesn't exist
 if (-not (Test-Path -Path $InstallDir)) {
