@@ -31,7 +31,7 @@ var historyCmd = &cobra.Command{
 		}
 		defer f.Close()
 
-		f.WriteString("# devfix history export\n\n")
+		f.WriteString("# devfix history export - reproducible script\n\n")
 
 		count := 0
 		for rows.Next() {
@@ -40,7 +40,21 @@ var historyCmd = &cobra.Command{
 			var ts string
 			rows.Scan(&action, &details, &freed, &ts)
 			f.WriteString(fmt.Sprintf("# %s - %s (Freed: %d bytes)\n", ts, details, freed))
-			f.WriteString(fmt.Sprintf("Write-Host 'Executed: %s'\n\n", action))
+			
+			psCmd := ""
+			switch action {
+			case "CLEAN":
+				psCmd = "Get-ChildItem -Directory -Recurse | Where-Object { $_.Name -match 'node_modules|target|\\.venv|\\.next|vendor' } | Remove-Item -Recurse -Force"
+			case "KILL":
+				psCmd = "# Manual check required, PID might have changed. Run: devfix kill <port>"
+			case "NUKE":
+				psCmd = "Remove-Item -Recurse -Force node_modules, target, .venv, .next, vendor -ErrorAction SilentlyContinue"
+			case "FLUSH":
+				psCmd = "ipconfig /flushdns"
+			default:
+				psCmd = fmt.Sprintf("Write-Host 'Executed: %s'", action)
+			}
+			f.WriteString(fmt.Sprintf("%s\n\n", psCmd))
 			count++
 		}
 

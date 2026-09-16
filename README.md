@@ -30,11 +30,11 @@ A comprehensive, all-in-one developer system toolkit.
 ### For Windows Users
 Open an Administrator PowerShell and run:
 ```powershell
-irm https://raw.githubusercontent.com/Domcho214/devfix/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/<Domcho214>/devfix/main/install.ps1 | iex
 ```
 
 ### Manual Installation (All Platforms)
-Check out the `Releases` tab on GitHub to download the standalone binary for Windows, macOS, or Linux. Just drop it into your system's PATH.
+Check out the `Releases` tab on GitHub to download the standalone binary for Windows, macOS, or Linux. Just drop it into your system's PATH. Basicily the one that has an icon so its named amd64 but its also for intel procesors 
 
 ## Usage
 
