@@ -1,5 +1,5 @@
-# devfix installer
-# Run with: irm https://<tvoj-url>/install.ps1 | iex
+# devfix installuh
+# Run with: irm https://raw.githubusercontent.com/Domcho214/devfix/main/install.ps1 | iex
 
 Write-Host "=========================================" -ForegroundColor Cyan
 Write-Host "         Installing devfix...            " -ForegroundColor Cyan
@@ -8,7 +8,7 @@ Write-Host "=========================================" -ForegroundColor Cyan
 # Set up paths
 $InstallDir = "$env:LOCALAPPDATA\devfix\bin"
 $ExePath = "$InstallDir\devfix.exe"
-$RepoUrl = "https://raw.githubusercontent.com/<Tvoj-GitHub-Ime>/devfix/main/builds/devfix-windows-amd64.exe"
+$RepoUrl = "https://raw.githubusercontent.com/Domcho214/devfix/main/devfix.exe"
 
 # Create installation directory if it doesn't exist
 if (-not (Test-Path -Path $InstallDir)) {
